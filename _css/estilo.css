@@ -1,0 +1,220 @@
+@charset "UTF-8"; /* padrão para ecrita Brasileira*/
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+@font-face {  /* Formatando os tipos de fonte*/
+    font-family: 'FonteLogo';
+    src: url(../_fonts/bubblegum-sans-regular.otf);
+}
+
+/*<section>sessão - <aside>conteudo lateral - <footer> rodapé*/
+body {
+    background-color: #dddddd; /* fundo */
+    color: rgba(0,0,0,1); /* cor da fonte*/
+    font-family: Arial, sans-serif;/*estilo da fonte */
+}
+div#interface { /* formatar a div interface*/
+    width: 1250px; /* largura da div em relação a tela*/
+    background-color: white; /* fundo da div*/
+    margin: -20px auto 0px auto; /* margen externa cima - esq - baixo - dir*/
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);/*rgba-red,green,blue,alfa(de 0a1)*/
+    /* box shadow(sombrear o objeto-> param1-deslocamento lateral/param2-desloc vertical/param3-espalhamento da sombra/param4-cor da sombra)*/
+    padding: 10px; /*margem interna 10px para os 4 lados (como serão os 4 lados iguais sõ precisa passar um paramentro) */
+}
+p {
+    text-align: justify; /* alinhando as duas laterais*/
+    text-indent: 25px; /* tamanho do paragrafo inicial (35px)*/
+}
+a {  /*formatar os links<a>*/
+    color: #606060;
+    text-decoration: none;/*pra não ficar sublinhado*/
+}
+a:hover { /*formatar o a:hover (passar o mouse em cima)*/
+    text-decoration: underline; /*ao passar o mouse em cima fica sublinhado*/
+}
+header#cabecalho img#icone { /*formatando a imagem do oculos*/
+    position: absolute;
+    left: 1150px;/*pixels em relação a margem esquerda*/
+    top: 70px;/*pixels em relação ao topo*/
+}
+header#cabecalho { /*formatando o cabeçalho*/
+    border-bottom: 1px #606060 solid;/* traçando uma linha na borda de baixo do cabecalho largura(1px) cor(#606060) formato(solid)*/
+    height: 150px; /*altura do cabeçalho*/
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;
+    /*colocar uma imagem no fundo do header(cabeçalho)com no-repeat para não repetir a imagem 0px- deslocamento lateral 100px desloc vertical*/       
+}
+header#cabecalho h1 { /*formatar o titulo do cabeçalho(h1)*/
+    font-family: 'FonteLogo', sans-serif;/*estilo da fonte*/
+    font-size: 30pt;/*tamanho da fonte*/
+    color: #606060;/*cor da fonte*/
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6);/*sombra(1px-deslocamento + 1px desloc vertical + 1px espalhamento + cor(padrão rgba) */
+    padding: 0px;
+    margin-bottom: 0px;/*margen de baixo*/
+}
+header#cabecalho h2 { /*formatando o titulo h2*/
+    font-family:'Titillium Web', sans-serif; 
+    color: #888888;
+    font-size: 15pt;
+    padding: 0px;
+    margin-top: 0px;/*margem de cima*/
+}
+/* Formatação de imagens com legenda */
+figure.foto-legenda {
+    position: relative; /* posição da foto (relativa ao tamnaho da pagina)*/ 
+    border: 8px solid white; /* criando uma borda*/
+    box-shadow: 1px 1px 8px black /* sombreameto*/
+}
+figure.foto-legenda img {
+    width: 100%; /* tamnaho para imagem */
+    height: 100%; /* altura para imagem */
+}
+figure.foto-legenda figcaption { /* formatando a legenda */
+    opacity: 0;/*transparencia da legenda */
+    position: absolute; /* posição absoluta em relação a foto*/
+    top: 0px; /* 0pixels em relação ao topo da figura*/
+    background-color: rgba(0,0,0,.4);/* fundo*/
+    color: white;/*fonte */
+    width: 100%;/* largura*/
+    height: 100%; /* altura*/
+    padding: 10px;/* margem interna*/
+    box-sizing: border-box ; 
+    transition: opacity 1s; 
+    font-size: 25px;/*tamanho da fonte */      
+}
+figure.foto-legenda:hover figcaption {
+    opacity: 1;
+}
+/* Formatação do menu*/
+
+nav#menu {
+    display: block; /* transformando os intens em blocos para move-los na tela*/     
+}
+
+nav#menu ul { /* menu (lista)*/
+    list-style: none; /* ocultando os indices*/
+    text-transform: uppercase; /* tudo para maiuscula */
+    position: absolute; /* posição do menu(lista)(absoluta-> pode ser posicionado em qualquer lugar da tela(dentro da <div>) relativa-> somente no interior do container(<div>)*/
+    top: -20px;/* definindo a position em relação ao top*/
+    left: 500px; /* definindo a position em relação a esquerda da tela*/
+
+}
+nav#menu li { /* li -> list itens (itens da lista)*/
+    display: inline-block; /* exibição lateral - blocos em linha*/
+    background-color: #dddddd; /* colorindo o fundo dos blocos*/
+    padding: 10px; /* determinando o espaçamento do fundo do bloco*/
+    margin: 2px; /* espaçamento externo aos blocos*/
+    transition: background-color 1s; /* transição(hover)dura 1s*/
+}
+nav#menu li:hover { /* hover-> efeito ao passar o mouse em cima*/
+    background-color: #606060; /*muda para essa cor ao passar o mouse */    
+}
+nav#menu h1 {
+    display: none; /* ocultando o menu principal que esta no h1 do nav*/
+}
+nav#menu a { /* formatar ancoras(tag <a>) do menu*/
+    color: #000000;/* cor da fonte*/
+    text-decoration: none; /* texto padrão-> none (sem sublinhado)*/
+}
+nav#menu a:hover { /* formatar ancora com hover(efeito)*/
+    color: #ffffff; /* mudar a cor ao passar o mouse*/
+    text-decoration: underline;/* Sublinhar ao passar o mouse*/
+}
+section#corpo {
+    display: block; /*formatando a section para ser mostrada como umm bloco*/
+    width: 620px; /*largura*/
+    float: left; /*fazer com que o bloco flutue para o lado esquerdo */
+    border-right: 1px solid #606060;/*criar uma borda do lado direito param(largura, tipo de borad, cor)*/
+    padding-right: 15px;/*espaçamento em relacao a borda direita*/
+}
+article#noticia-principal h2 {
+    font-size: 12pt;/*tamanho da fonte*/
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 10px;/*espaçamento cima direita baixo esquerda*/
+    margin: 10px 0px 10px 0px;/*margem cima direita baixo esquerda*/
+}
+header#cabecalho-artigo h1 {
+    font-family: 'FonteLogo', sans-serif;/*estilo da fonte*/;
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.direita {
+    text-align: right;
+}
+header#cabecalho-artigo h2 {
+    font-size: 13pt;
+    color: #818080;
+    background-color: #ffffff;
+    margin: 0px;
+}
+header#cabecalho-artigo h3 {
+    font-size: 12pt;
+    color: #606060;      
+}
+table#tabelaspec {
+    border: 1px solid #606060;/*borda externa - param(largura(1px) - solida - cor*/     
+    border-spacing: 0px;/*espaçamento entre as celulas da tabela(0px)*/
+    margin-left: auto;/*centralizar a tabela na interface*/
+    margin-right: auto;/*centralizar a tabela* na interface*/    
+}
+table#tabelaspec td {
+    border: 1px solid #606060;/*borda individual para todos <td>*/
+    padding: 10px;/*PADDING-ESPAÇO INTERNO PARA TODOS OS OBJETOS*/
+    background-color: #e4e1e1;/*cor do fundo para todos td*/
+}
+table#tabelaspec caption {
+    color: #888888;/*cor da fonte*/
+    font-size: 15pt;/*tamanho da fonte correto é -> pt e não -> px*/
+    font-weight: bolder;
+    border: 1px solid #606060;/*borda para o <caption>(titulo da tabela)*/
+    background-color: #e4e1e1;/*cor do fundo para o caption*/
+}
+table#tabelaspec caption span {
+    display: block;/*exibição block para ele se desconectar do caption*/
+    float: right;/*flutuar sobre a direita do caption*/
+    color: #000000;/*cor da fonte*/
+    font-size: 8pt;/*tamanho da fonte*/
+    margin-top: 10px;/*distancia da margen superior (top)*/
+}
+table#tabelaspec td.ce {    
+    color: #ffffff;/*cor da fonte para todos td de classe ce*/
+    background-color: #606060;/*cor do fundo para todos td de classe ce*/    
+    vertical-align: top;/*alinhamento vertical de todos td de classe ce*/
+    font-size: 15pt;/*tamanho da fonte*/
+    font-weight: bold;/*negrito*/
+    text-align: right;/*alinhamento do texto*/
+}
+table#tabelaspec td.cd {
+    background-color: #cecece; 
+    font-weight: bolder;/*negrito*/
+}
+aside#lateral {    
+    display: block;
+    width: 580px;/*largura*/
+    float: right;/*fazer com que o bloco flutue para o lado direito */    
+    background-color: #dddddd;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);/*sombreamento- params(1e2- deslocamento vertical e horizontal, 3-espalhamento 4-cor*/
+}
+aside#lateral h1 {
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-top: 0px;
+}
+aside#lateral h2 {
+    background-color: #606060;
+    font-size: 15pt;
+    color: #ffffff;    
+    padding: 10px;
+}
+footer#rodape {
+    clear: both;/* fazer com que o rodapé apareça fora dos dois lados(section e aside)*/
+    border-top: 1px solid #606060;/*criar borda em cima*/
+}
+footer#rodape p {
+    text-align: center;/*centralizar o conteudo do rodape*/
+}
+
+
