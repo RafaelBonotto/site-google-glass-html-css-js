@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+ul#albun-fotos{ /*configuras a lista(ul) albun de fotos*/
+    width: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+    list-style: none;
+}
+ul#albun-fotos li {/*formatando cada iten da lista(li)que serão as fotos*/
+    float: left;/*flutuar lado a lado(left)*/
+    width: 200px;/*largura*/
+    height: 200px;/*altura*/;
+    margin: 10px;
+    border: 5px solid #ffffff;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    /*-webkit-transition:all 1s ease-in;*/
+}
+ul#albun-fotos li span {/*formatando as legendas das fotos*/
+    opacity: 0;/*opacidade da legenda*/
+    color: #ffffff;/*cor da fonte*/
+    text-shadow: 1px 1px 1px #000000;/*sombreamento*/
+    background-color: rgba(0,0,0,.3);/*fundo da legenda*/
+    font-size: 9pt;
+    line-height: 370px;/*fazer com a legenda fique na parte de baixo*/
+    padding: 5px;
+}
+ul#albun-fotos li:hover {
+    /*-webkit-transform: scale(1.5);*/
+}
+ul#albun-fotos li:hover span {
+    opacity: 1;
+}
+ul#albun-fotos li#foto1{
+    background: url('../_imagens/galeria-01.jpg') no-repeat;
+    background-position: 50% 50%;/*ampliar o centro o centro da imagen*/
+    background-size: 400px 400px;/*tamanho original da imagem*/
+    background-color: #ffffff;
+}
+ul#albun-fotos li#foto1:hover{/*ao passar o mouse na foto(:hover)*/
+    background-position: 0px 0px;/*volta a  mostrar a parte de cima da foto*/
+    background-size: 200px 200px;/*formtaçõa do tamanho do quadro que estã  a foto 200 x 200*/
+}
+ul#albun-fotos li#foto2{
+    background: url('../_imagens/galeria-02.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+ul#albun-fotos li#foto2:hover{/*ao passar o mouse na foto(:hover)*/
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+ul#albun-fotos li#foto3{
+    background: url('../_imagens/galeria-03.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+ul#albun-fotos li#foto3:hover{/*ao passar o mouse na foto(:hover)*/
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+ul#albun-fotos li#foto4{
+    background: url('../_imagens/galeria-04.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+ul#albun-fotos li#foto4:hover{/*ao passar o mouse na foto(:hover)*/
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+ul#albun-fotos li#foto5{
+    background: url('../_imagens/galeria-05.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+ul#albun-fotos li#foto5:hover{/*ao passar o mouse na foto(:hover)*/
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
+ul#albun-fotos li#foto6{
+    background: url('../_imagens/galeria-06.jpg') no-repeat;
+    background-position: 50% 50%;
+    background-size: 400px 400px;
+    background-color: #ffffff;
+}
+ul#albun-fotos li#foto6:hover{/*ao passar o mouse na foto(:hover)*/
+    background-position: 0px 0px;
+    background-size: 200px 200px;
+}
