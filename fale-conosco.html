@@ -7,6 +7,13 @@
         <link rel="stylesheet" href="_css/form.css"/>
     </head> 
     <script language= "javascript" src="_javascript/funcoes.js"></script>   
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cqtd').value);
+            tot = qtd * 1500;
+            document.getElementById('ctot').value = tot;  
+        }
+    </script>
     <body>
         <div id= "interface">
             <header id="cabecalho">    
@@ -38,7 +45,8 @@
                             <h3 class="direita">Produzido em Dezembro/2020</h3>
                         </hgroup> 
                     </header>
-                    <form>
+
+                    <form method="POST" id="fcontato" action="mailto:rafareisaba@gmail.com" oninput="calc_total();">
                         <fieldset id="usuario">
                             <legend>Identificação do Usuário</legend>
                             <p>Nome:<input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
@@ -55,23 +63,44 @@
                             <legend>Endereço do Usuário</legend>
                             <P>Logradouro:<input type="text" name="trua" id="crua" size="13" maxlength="80" placeholder="Rua, Av, Trav..."/></P>
                             <P>Número:<input type="number" name="tnum" id="cnum" min="0" max="99999"/></P>
-                            <P>Estado:</P>
-                            <P>Cidade:</P>
+                            <P>Estado:
+                                <select name="cest">
+                                    <optgroup label="Região Sudeste">
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="SP" selected>São Paulo</option>
+                                        <option value="MG">Minas Gerais</option>
+                                    </optgroup>
+                                    <optgroup label="Região Sul">
+                                        <option value="PR">Paraná</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                    </optgroup>                                
+                                </select>
+                            </P>
+                            <P>Cidade:<input type="text" name="tcid" id="ccid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"/></P>
+                            <datalist id="cidades">
+                                <option value="Rio de Janeiro"></option>
+                                <option value="Nova Iguaçu"></option>
+                                <option value="Belford Roxo"></option>
+                            </datalist>
                         </fieldset>                       
                         <fieldset id="mensagem">
                             <legend>Mensagem do Usuário</legend>
-                            <P>Grau de Urgência:</P>
-                            <P>Mensagem:</P>
+                            <P>Grau de Urgência:Min<input type="range" name="turg" id="curg" min="0" max="10" step="2"/>Max</P>
+                            <P>Mensagem:
+                            <textarea name="tmsg" id="cmsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagen">
+
+                            </textarea></P>
                         </fieldset>                       
                         <fieldset id="pedido">
                             <legend>Quero um Google Glass</legend>
-                            <P>Gostaria de adquirir um Google Glass quando disponível</P>
-                            <P>Cor:</P>
-                            <P>Quantidade:</P>
-                            <P>Preço Total: R$</P>
-                        </fieldset>                      
+                            <P><input type="checkbox" name="tped" id="cped"/> Gostaria de adquirir um Google Glass quando disponível</P>
+                            <P>Cor:<input type="color" name="tcor" id="ccor" value="#0000FF"/></P>
+                            <P>Quantidade:<input type="number" name="tqtd" id="cqtd" min="0" max="5" value="0"/></P>
+                            <P>Preço Total: R$ <input type="text" name="ttot" id="ctot" placeholder="Total a Pagar" readonly/></P>
+                        </fieldset>                                              
                         
-                        [BOTÃO ENVIAR]
+                        <input type="image" name="tenviar" src="_imagens/botao-enviar.png"/>
                     </form>                    
                 </article>    
             </section>   
